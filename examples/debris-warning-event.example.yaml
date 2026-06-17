@@ -1,0 +1,64 @@
+space_friendship_event:
+  event_id: "sfn-event-0002"
+  protocol_version: "v0.1"
+  event_type: "debris_warning"
+  severity: "high"
+  status: "confirmed"
+  summary: "Confirmed debris field risk affecting multiple orbital assets."
+
+  object_refs:
+    - object_id: "debris:field-2026-001"
+      object_type: "debris"
+    - object_id: "satellite:example-beta"
+      object_type: "satellite"
+      operator: "ExampleBeta Operator"
+
+  observation_sources:
+    - source_id: "space-agency-node-01"
+      source_type: "space_agency"
+      confidence: 0.91
+      observed_at: "2026-06-17T09:10:00Z"
+      evidence_refs:
+        - "obs:debris-map-001"
+    - source_id: "commercial-ssa-node-03"
+      source_type: "commercial_ssa_provider"
+      confidence: 0.88
+      observed_at: "2026-06-17T09:16:00Z"
+      evidence_refs:
+        - "obs:debris-track-003"
+
+  ai_assistance:
+    used: true
+    role: "trajectory_uncertainty_estimation"
+    autonomy_level: "human_supervised"
+    human_review_required: true
+
+  trace:
+    trace_id: "trace-sfn-0002"
+    evidence_status: "multi_source_confirmed"
+    attribution_status: "unresolved"
+    rationale: "Debris field confirmed by multiple sources. Origin attribution remains unresolved and must not be finalized by AI."
+
+  coordination:
+    notified_parties:
+      - "operator:example-beta"
+      - "neutral-coordination-node"
+      - "regional-space-safety-contact"
+    deescalation_required: true
+    recommended_actions:
+      - "issue_debris_warning"
+      - "notify_operator"
+      - "publish_non_sensitive_summary"
+      - "perform_human_review"
+
+  human_review:
+    required: true
+    status: "in_progress"
+    reviewer_role: "orbital-debris-risk-reviewer"
+    review_notes: "Public warning may be issued after sensitive operator data is removed."
+
+  safety_boundary:
+    no_target_selection: true
+    no_automatic_retaliation: true
+    no_weapon_use_recommendation: true
+    no_final_hostile_attribution_by_ai: true
