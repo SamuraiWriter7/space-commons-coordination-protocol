@@ -1,0 +1,84 @@
+ai_misclassification_audit:
+  audit_id: "ama-0001"
+  protocol_version: "v0.4"
+  linked_event_id: "sfn-event-0003"
+  linked_workflow_id: "dew-0001"
+  coordinating_node_id: "ncn-0001"
+  audit_status: "confirmed_false_positive"
+
+  trigger:
+    trigger_source: "neutral_coordination_node"
+    original_event_type: "communication_anomaly"
+    suspected_issue: "false_positive"
+    escalation_sensitive: true
+    description: "Initial AI anomaly classification suggested possible interference, but operator telemetry and secondary observations did not support that interpretation."
+
+  initial_ai_classification:
+    model_ref: "ai-monitoring-model-example"
+    model_role: "anomaly_detection"
+    output_label: "possible_interference"
+    confidence: 0.64
+    autonomy_level: "advisory_only"
+    generated_at: "2026-06-17T11:03:00Z"
+    classification_notes: "AI flagged the telemetry gap as anomalous, but confidence was below escalation threshold."
+
+  evidence_review:
+    minimum_sources_required: 2
+    sources_reviewed: 3
+    evidence_status: "disputed"
+    confidence_after_review: 0.28
+    conflicting_evidence_found: true
+    evidence_findings:
+      - "Operator telemetry indicates scheduled ground station handoff."
+      - "Secondary observation source did not confirm interference."
+      - "AI classification did not account for planned communication window change."
+
+  human_review:
+    required: true
+    status: "resolved"
+    reviewer_role: "space-safety-coordinator"
+    review_scope:
+      - "classification_accuracy"
+      - "evidence_consistency"
+      - "confidence_calibration"
+      - "escalation_risk"
+      - "public_summary_safety"
+      - "recurrence_prevention"
+    review_notes: "The anomaly was a false positive caused by missing context about scheduled handoff. No hostile attribution is permitted."
+
+  misclassification_assessment:
+    assessment_result: "false_positive"
+    severity_adjustment: "withdraw_event"
+    hostile_attribution_allowed: false
+    escalation_blocked: true
+    assessment_notes: "Initial AI label was not supported after multi-source review."
+
+  correction_actions:
+    - "withdraw_false_positive"
+    - "update_confidence"
+    - "notify_operator"
+    - "update_public_summary"
+    - "block_escalation"
+    - "record_recurrence_rule"
+
+  recurrence_prevention:
+    required: true
+    recurrence_rule: "Before classifying telemetry gaps as possible interference, verify scheduled communication windows and operator handoff logs."
+    model_update_required: false
+    dataset_review_required: true
+    validator_update_required: false
+
+  audit_log:
+    audit_log_id: "audit-sfn-ama-0001"
+    trace_id: "trace-sfn-ama-0001"
+    records_initial_ai_output: true
+    records_evidence_review: true
+    records_human_review: true
+    records_correction_actions: true
+
+  safety_boundary:
+    no_target_selection: true
+    no_automatic_retaliation: true
+    no_weapon_use_recommendation: true
+    no_final_hostile_attribution_by_ai: true
+    no_escalation_without_human_review: true
