@@ -1,5 +1,37 @@
 # Changelog
 
+
+---
+
+# CHANGELOG.md 追記
+
+```markdown
+## v0.4.0-candidate — AI Misclassification Audit
+
+### Added
+
+- Added `AI Misclassification Audit` model.
+- Added schema for auditing AI-generated classifications in space safety coordination.
+- Added example audit for a false-positive communication anomaly classification.
+- Added audit fields for:
+  - initial AI classification
+  - evidence review
+  - human review
+  - misclassification assessment
+  - correction actions
+  - recurrence prevention
+  - safety boundary
+- Updated validation script to include AI Misclassification Audit validation.
+
+### Design Intent
+
+v0.4 introduces the audit layer for preventing AI false positives, over-classification, misleading confidence, and escalation-sensitive misinterpretation.
+
+The core purpose is to prevent AI-generated uncertainty from becoming hostility.
+
+AI may assist coordination.  
+AI must not automate hostility.
+
 ## v0.3.0-candidate — De-escalation Workflow
 
 ### Added
