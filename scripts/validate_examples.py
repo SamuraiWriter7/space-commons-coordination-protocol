@@ -33,6 +33,13 @@ VALIDATION_TARGETS = [
             ROOT / "examples" / "de-escalation-workflow.example.yaml",
         ],
     },
+        {
+        "name": "AI Misclassification Audit",
+        "schema": ROOT / "schemas" / "ai-misclassification-audit.schema.json",
+        "examples": [
+            ROOT / "examples" / "ai-misclassification-audit.example.yaml",
+        ],
+    },
 ]
 
 
