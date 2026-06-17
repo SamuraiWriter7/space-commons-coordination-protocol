@@ -1,7 +1,28 @@
 # Changelog
 
+## v0.5.0-candidate — Space Debris Responsibility Record
 
----
+### Added
+
+- Added `Space Debris Responsibility Record` model.
+- Added schema for debris event tracking, affected environment, origin assessment, responsibility review, mitigation actions, remediation contributions, human review, public disclosure, recurrence prevention, audit log, and safety boundary.
+- Added example debris responsibility record.
+- Updated validation script to include Space Debris Responsibility Record validation.
+
+### Design Intent
+
+v0.5 introduces a debris-related responsibility and remediation record for preserving outer space as a shared commons.
+
+The record does not automatically assign legal liability or hostile attribution.
+
+It documents what happened, what is known, what remains uncertain, what mitigation actions were taken, and what remediation contributions were made.
+
+The core principle is:
+
+Before blame, trace.  
+Before attribution, review.  
+Before punishment, mitigation.  
+Before escalation, remediation.
 
 # CHANGELOG.md 追記
 
