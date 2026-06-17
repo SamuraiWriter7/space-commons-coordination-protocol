@@ -1,0 +1,119 @@
+space_debris_responsibility_record:
+  record_id: "sdrr-0001"
+  protocol_version: "v0.5"
+  linked_event_id: "sfn-event-0002"
+  linked_workflow_id: "dew-0001"
+  linked_audit_id: "ama-0001"
+  coordinating_node_id: "ncn-0001"
+  record_status: "mitigation_in_progress"
+
+  debris_event:
+    debris_event_type: "debris_field_warning"
+    severity: "high"
+    detected_at: "2026-06-17T09:10:00Z"
+    summary: "Confirmed debris field risk affecting multiple orbital assets."
+    object_refs:
+      - object_id: "debris:field-2026-001"
+        object_type: "debris"
+      - object_id: "satellite:example-beta"
+        object_type: "satellite"
+        operator: "ExampleBeta Operator"
+
+  affected_environment:
+    orbital_region: "leo"
+    affected_assets_count: 4
+    risk_scope: "multi_operator"
+    affected_parties:
+      - "operator:example-beta"
+      - "operator:example-gamma"
+      - "regional-space-safety-contact"
+
+  origin_assessment:
+    origin_status: "under_review"
+    confidence: 0.42
+    evidence_status: "multi_source_unconfirmed"
+    ai_assisted: true
+    final_attribution_by_ai: false
+    assessment_notes: "Multiple sources confirm debris field presence, but origin remains uncertain."
+
+  responsibility_review:
+    responsibility_status: "under_review"
+    legal_liability_determined: false
+    review_required: true
+    review_basis:
+      - "observation_records"
+      - "trajectory_analysis"
+      - "multi_source_verification"
+      - "human_review"
+    review_notes: "No legal liability determination is made by this record."
+
+  mitigation_actions:
+    - action_id: "mit-0001"
+      action_type: "notify_operator"
+      actor: "neutral-coordination-node"
+      status: "completed"
+      completed_at: "2026-06-17T09:20:00Z"
+      notes: "Affected operators notified with non-attributive warning."
+    - action_id: "mit-0002"
+      action_type: "increase_monitoring"
+      actor: "commercial-ssa-provider"
+      status: "in_progress"
+      notes: "Monitoring cadence increased for affected orbital region."
+    - action_id: "mit-0003"
+      action_type: "publish_debris_warning"
+      actor: "neutral-coordination-node"
+      status: "planned"
+      notes: "Public warning requires sensitive data redaction and human review."
+
+  remediation_contributions:
+    - contribution_id: "rem-0001"
+      contribution_type: "observation_data_shared"
+      contributor: "commercial-ssa-provider"
+      status: "completed"
+      notes: "Additional track data shared with coordination node."
+    - contribution_id: "rem-0002"
+      contribution_type: "lessons_learned_shared"
+      contributor: "satellite-operator-example"
+      status: "proposed"
+      notes: "Operator may share non-sensitive lessons learned after review."
+
+  human_review:
+    required: true
+    status: "in_progress"
+    reviewer_role: "orbital-debris-risk-reviewer"
+    review_scope:
+      - "origin_assessment"
+      - "responsibility_review"
+      - "mitigation_action_review"
+      - "remediation_contribution_review"
+      - "public_disclosure_review"
+      - "escalation_risk_review"
+    review_notes: "Record should remain non-attributive until evidence and review are complete."
+
+  public_disclosure:
+    disclosure_level: "public_non_sensitive_summary"
+    public_summary_allowed: true
+    sensitive_data_redacted: true
+    summary: "A debris field risk has been detected and is under coordinated review. No hostile attribution or legal liability determination is made by this notice."
+
+  recurrence_prevention:
+    required: true
+    recurrence_rule: "For debris field warnings, public summaries must remain non-attributive unless origin assessment is confirmed by human review."
+    operator_practice_update_required: false
+    model_or_validator_update_required: true
+
+  audit_log:
+    audit_log_id: "audit-sfn-sdrr-0001"
+    trace_id: "trace-sfn-sdrr-0001"
+    records_origin_assessment: true
+    records_responsibility_review: true
+    records_mitigation_actions: true
+    records_remediation_contributions: true
+    records_human_review: true
+
+  safety_boundary:
+    no_automatic_liability_assignment: true
+    no_final_attribution_by_ai: true
+    no_retaliation_trigger: true
+    no_public_sensitive_data_leak: true
+    human_review_required: true
