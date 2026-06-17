@@ -1,0 +1,63 @@
+space_friendship_event:
+  event_id: "sfn-event-0001"
+  protocol_version: "v0.1"
+  event_type: "collision_risk"
+  severity: "medium"
+  status: "under_review"
+  summary: "Potential conjunction risk detected between an operational satellite and an unknown debris object."
+
+  object_refs:
+    - object_id: "satellite:example-alpha"
+      object_type: "satellite"
+      operator: "ExampleSat Operator"
+    - object_id: "debris:unknown-2048"
+      object_type: "debris"
+
+  observation_sources:
+    - source_id: "ssa-node-01"
+      source_type: "commercial_ssa_provider"
+      confidence: 0.82
+      observed_at: "2026-06-17T08:30:00Z"
+      evidence_refs:
+        - "obs:tracklet-001"
+    - source_id: "observatory-node-02"
+      source_type: "academic_observatory"
+      confidence: 0.77
+      observed_at: "2026-06-17T08:42:00Z"
+      evidence_refs:
+        - "obs:tracklet-002"
+
+  ai_assistance:
+    used: true
+    role: "risk_classification"
+    autonomy_level: "advisory_only"
+    human_review_required: true
+
+  trace:
+    trace_id: "trace-sfn-0001"
+    evidence_status: "multi_source_unconfirmed"
+    attribution_status: "not_applicable"
+    rationale: "Multiple observation sources indicate possible conjunction risk, but additional verification is required."
+
+  coordination:
+    notified_parties:
+      - "operator:example-alpha"
+      - "neutral-coordination-node"
+    deescalation_required: false
+    recommended_actions:
+      - "continue_monitoring"
+      - "request_additional_sources"
+      - "notify_operator"
+      - "perform_human_review"
+
+  human_review:
+    required: true
+    status: "pending"
+    reviewer_role: "space-safety-coordinator"
+    review_notes: "Awaiting additional trajectory confirmation."
+
+  safety_boundary:
+    no_target_selection: true
+    no_automatic_retaliation: true
+    no_weapon_use_recommendation: true
+    no_final_hostile_attribution_by_ai: true
