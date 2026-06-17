@@ -26,6 +26,13 @@ VALIDATION_TARGETS = [
             ROOT / "examples" / "neutral-coordination-node.example.yaml",
         ],
     },
+        {
+        "name": "De-escalation Workflow",
+        "schema": ROOT / "schemas" / "de-escalation-workflow.schema.json",
+        "examples": [
+            ROOT / "examples" / "de-escalation-workflow.example.yaml",
+        ],
+    },
 ]
 
 
