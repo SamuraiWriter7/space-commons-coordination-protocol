@@ -1,3 +1,26 @@
+## v0.3 — De-escalation Workflow
+
+v0.3 adds the De-escalation Workflow model.
+
+The De-escalation Workflow connects Space Friendship Events and Neutral Coordination Nodes into a step-by-step process for preventing premature escalation.
+
+It defines:
+
+- event recording
+- observation collection
+- cross-source verification
+- AI false-positive checking
+- neutral node review
+- human review
+- operator notification
+- public summary review
+- resolution or continued monitoring
+
+The default posture is de-escalation.
+
+When evidence is uncertain, disputed, or incomplete, the workflow requires additional verification and human review before escalation-sensitive interpretation.
+
+
 ## v0.2 — Neutral Coordination Node
 
 ## Civilizational Positioning
