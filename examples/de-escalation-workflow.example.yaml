@@ -1,0 +1,109 @@
+deescalation_workflow:
+  workflow_id: "dew-0001"
+  protocol_version: "v0.3"
+  linked_event_id: "sfn-event-0004"
+  coordinating_node_id: "ncn-0001"
+  severity: "medium"
+  status: "under_review"
+
+  trigger:
+    event_type: "communication_anomaly"
+    trigger_condition: "Unexpected signal loss and delayed telemetry from an operational satellite."
+    initial_interpretation: "possible_miscommunication"
+    hostile_attribution_allowed: false
+
+  workflow_steps:
+    - step_id: "step-01"
+      step_type: "record_event"
+      actor: "satellite-operator"
+      required: true
+      status: "completed"
+      completed_at: "2026-06-17T11:00:00Z"
+      notes: "Communication anomaly recorded as a Space Friendship Event."
+
+    - step_id: "step-02"
+      step_type: "collect_observations"
+      actor: "neutral-coordination-node"
+      required: true
+      status: "completed"
+      completed_at: "2026-06-17T11:05:00Z"
+      notes: "Requested telemetry, ground station logs, and independent observation records."
+
+    - step_id: "step-03"
+      step_type: "cross_source_verification"
+      actor: "neutral-coordination-node"
+      required: true
+      status: "in_progress"
+      notes: "Second source confirms signal degradation but does not support hostile attribution."
+
+    - step_id: "step-04"
+      step_type: "ai_false_positive_check"
+      actor: "ai-safety-reviewer"
+      required: true
+      status: "pending"
+      notes: "AI anomaly score must be reviewed before public interpretation."
+
+    - step_id: "step-05"
+      step_type: "human_review"
+      actor: "space-safety-coordinator"
+      required: true
+      status: "pending"
+      notes: "Human review required before escalation-sensitive statements."
+
+    - step_id: "step-06"
+      step_type: "operator_notification"
+      actor: "neutral-coordination-node"
+      required: true
+      status: "completed"
+      completed_at: "2026-06-17T11:12:00Z"
+      notes: "Operator and relevant coordination contacts notified."
+
+  evidence_handling:
+    minimum_sources_required: 2
+    current_sources_count: 2
+    evidence_status: "multi_source_unconfirmed"
+    uncertainty_policy: "hold_for_human_review"
+    sensitive_data_policy: "redact_before_public_summary"
+
+  ai_boundary:
+    ai_used: true
+    allowed_roles:
+      - "anomaly_detection"
+      - "data_consistency_check"
+      - "false_positive_review"
+      - "notification_priority_ranking"
+    forbidden_actions:
+      - "target_selection"
+      - "automatic_retaliation"
+      - "weapon_use_recommendation"
+      - "final_hostile_attribution_by_ai"
+      - "escalation_without_human_review"
+    autonomy_limit: "advisory_only"
+    human_review_required: true
+
+  notification_policy:
+    notify_operator: true
+    notify_neutral_node: true
+    additional_parties:
+      - "regional-space-safety-contact"
+    public_summary_allowed: true
+    public_summary_condition: "Only non-sensitive and non-attributive information may be published after human review."
+
+  human_review:
+    required: true
+    status: "pending"
+    review_scope:
+      - "safety_assessment"
+      - "evidence_verification"
+      - "ai_false_positive_check"
+      - "public_summary_approval"
+      - "attribution_restriction"
+      - "operator_notification"
+    reviewer_role: "space-safety-coordinator"
+    review_notes: "No hostile attribution may be made from the current evidence."
+
+  outcome:
+    deescalation_result: "not_yet_determined"
+    next_action: "continue_monitoring"
+    hostile_attribution_made: false
+    notes: "Workflow remains under review. Default posture is de-escalation."
