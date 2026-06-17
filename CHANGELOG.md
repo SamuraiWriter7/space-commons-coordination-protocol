@@ -1,5 +1,27 @@
 # Changelog
 
+## v0.2.0-candidate — Neutral Coordination Node
+
+### Added
+
+- Added `Neutral Coordination Node` model.
+- Added schema for neutral coordination node governance, AI policy, verification policy, interoperability, trust model, audit logging, and safety boundary.
+- Added example neutral coordination node.
+- Updated validation script to use explicit schema-example mappings.
+- Added safety boundary:
+  - no command authority
+  - no target selection
+  - no automatic retaliation
+  - no weapon-use recommendation
+  - no final hostile attribution by AI
+
+### Design Intent
+
+v0.2 defines the first operational coordination structure for the Space Commons Coordination Protocol.
+
+The Neutral Coordination Node is not a command node.  
+It aggregates observations, verifies multiple sources, prevents false positives, supports de-escalation, and routes sensitive cases to human review.
+
 ## v0.1.0-candidate — Space Friendship Event Layer
 
 ### Added
