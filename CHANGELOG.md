@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.3.0-candidate — De-escalation Workflow
+
+### Added
+
+- Added `De-escalation Workflow` model.
+- Added schema for workflow steps, evidence handling, AI boundary, notification policy, human review, and outcome.
+- Added example workflow for communication anomaly de-escalation.
+- Updated validation script to include De-escalation Workflow validation.
+
+### Design Intent
+
+v0.3 connects Space Friendship Events and Neutral Coordination Nodes into an executable de-escalation process.
+
+The workflow prevents uncertainty from becoming hostility by requiring observation collection, cross-source verification, AI false-positive review, human review, and non-escalation defaults.
+
 ## v0.2.0-candidate — Neutral Coordination Node
 
 ### Added
