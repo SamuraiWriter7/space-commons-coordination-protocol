@@ -40,6 +40,13 @@ VALIDATION_TARGETS = [
             ROOT / "examples" / "ai-misclassification-audit.example.yaml",
         ],
     },
+        {
+        "name": "Space Debris Responsibility Record",
+        "schema": ROOT / "schemas" / "space-debris-responsibility-record.schema.json",
+        "examples": [
+            ROOT / "examples" / "space-debris-responsibility-record.example.yaml",
+        ],
+    },
 ]
 
 
