@@ -1,5 +1,44 @@
 # Space Commons Coordination Protocol
 
+## v0.4 — AI Misclassification Audit
+
+The AI Misclassification Audit layer defines a review structure for AI-generated classifications in space safety coordination.
+
+It is designed to prevent:
+
+- false positives
+- over-classification
+- under-classification
+- misleading confidence
+- context loss
+- data quality errors
+- evidence mismatch
+- model bias
+- public summary errors
+- escalation-sensitive language
+
+This layer asks a simple question:
+
+Did AI classify the event correctly, or did it create unnecessary escalation risk?
+
+The audit may produce correction actions such as:
+
+- withdraw false positive
+- reclassify event
+- update confidence
+- request additional sources
+- notify operator
+- update public summary
+- block escalation
+- record recurrence rule
+
+Included files:
+
+```text
+docs/ai-misclassification-audit.md
+schemas/ai-misclassification-audit.schema.json
+examples/ai-misclassification-audit.example.yaml
+
 **A Nakayoshi Network for peaceful, AI-assisted space coordination.**
 
 Space Commons Coordination Protocol (SCCP) is a lightweight coordination protocol for preserving outer space as a shared operational environment.
