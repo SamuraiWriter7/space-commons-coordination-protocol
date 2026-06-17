@@ -1,0 +1,62 @@
+space_friendship_event:
+  event_id: "sfn-event-0003"
+  protocol_version: "v0.1"
+  event_type: "ai_false_positive_review"
+  severity: "low"
+  status: "withdrawn"
+  summary: "Initial AI anomaly flag was reviewed and withdrawn after human and multi-source verification."
+
+  object_refs:
+    - object_id: "satellite:example-gamma"
+      object_type: "satellite"
+      operator: "ExampleGamma Operator"
+    - object_id: "unknown:temporary-signal-001"
+      object_type: "unknown"
+
+  observation_sources:
+    - source_id: "ai-monitoring-node-01"
+      source_type: "neutral_coordination_node"
+      confidence: 0.64
+      observed_at: "2026-06-17T10:00:00Z"
+      evidence_refs:
+        - "obs:anomaly-flag-001"
+    - source_id: "satellite-operator-node-01"
+      source_type: "satellite_operator"
+      confidence: 0.86
+      observed_at: "2026-06-17T10:08:00Z"
+      evidence_refs:
+        - "obs:operator-telemetry-001"
+
+  ai_assistance:
+    used: true
+    role: "false_positive_review"
+    autonomy_level: "advisory_only"
+    human_review_required: true
+
+  trace:
+    trace_id: "trace-sfn-0003"
+    evidence_status: "disputed"
+    attribution_status: "not_applicable"
+    rationale: "Initial anomaly flag was not supported by operator telemetry. Event is withdrawn as a false positive."
+
+  coordination:
+    notified_parties:
+      - "operator:example-gamma"
+      - "neutral-coordination-node"
+    deescalation_required: true
+    recommended_actions:
+      - "withdraw_false_positive"
+      - "publish_non_sensitive_summary"
+      - "perform_human_review"
+
+  human_review:
+    required: true
+    status: "resolved"
+    reviewer_role: "ai-safety-reviewer"
+    review_notes: "False-positive event confirmed. No hostile attribution or escalation permitted."
+
+  safety_boundary:
+    no_target_selection: true
+    no_automatic_retaliation: true
+    no_weapon_use_recommendation: true
+    no_final_hostile_attribution_by_ai: true
