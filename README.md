@@ -1,3 +1,27 @@
+## v0.2 — Neutral Coordination Node
+
+v0.2 adds the Neutral Coordination Node model.
+
+A Neutral Coordination Node is a non-command coordination structure for:
+
+- observation aggregation
+- cross-source verification
+- de-escalation review
+- AI false-positive checking
+- operator notification
+- public summary preparation
+
+The node is designed to process v0.1 Space Friendship Events without creating military command authority.
+
+Core boundaries:
+
+- no command authority
+- no target selection
+- no automatic retaliation
+- no weapon-use recommendation
+- no final hostile attribution by AI
+- human review required
+
 # Space Commons Coordination Protocol
 
 A Nakayoshi Network for peaceful, AI-assisted space coordination.
