@@ -1,0 +1,91 @@
+neutral_coordination_node:
+  node_id: "ncn-0001"
+  protocol_version: "v0.2"
+  node_name: "Example Neutral Coordination Node"
+  node_type: "multi_stakeholder"
+  status: "proposed"
+
+  operational_scope:
+    - "collision_risk"
+    - "debris_warning"
+    - "ai_false_positive_review"
+    - "communication_anomaly"
+
+  roles:
+    - "observation_aggregation"
+    - "cross_source_verification"
+    - "deescalation_review"
+    - "ai_false_positive_check"
+    - "operator_notification"
+    - "public_summary_preparation"
+
+  governance:
+    operator_type: "mixed_civilian_oversight"
+    participating_entities:
+      - entity_id: "space-agency-example"
+        entity_type: "space_agency"
+        role: "public safety liaison"
+      - entity_id: "commercial-ssa-example"
+        entity_type: "commercial_ssa_provider"
+        role: "observation data provider"
+      - entity_id: "university-lab-example"
+        entity_type: "university_research_lab"
+        role: "independent verification reviewer"
+      - entity_id: "satellite-operator-example"
+        entity_type: "satellite_operator"
+        role: "operator response contact"
+    decision_authority: "advisory_only"
+    conflict_of_interest_policy: "Participating entities must disclose operational or commercial conflicts before reviewing events involving their own assets."
+
+  ai_policy:
+    allowed_roles:
+      - "risk_classification"
+      - "trajectory_uncertainty_estimation"
+      - "anomaly_detection"
+      - "data_consistency_check"
+      - "notification_priority_ranking"
+      - "false_positive_review"
+      - "public_summary_drafting"
+    forbidden_roles:
+      - "target_selection"
+      - "automatic_retaliation"
+      - "weapon_use_recommendation"
+      - "final_hostile_attribution_by_ai"
+      - "escalation_without_human_review"
+    autonomy_limit: "advisory_only"
+    human_review_required: true
+
+  verification_policy:
+    minimum_sources_required: 2
+    confidence_threshold_for_alert: 0.75
+    disputed_evidence_handling: "hold_for_human_review"
+    attribution_policy: "multi_party_review_required"
+
+  interoperability:
+    accepts_event_versions:
+      - "sfn_event_v0_1"
+    external_alignment:
+      - "Outer Space Treaty"
+      - "Artemis Accords"
+      - "Space debris mitigation guidelines"
+      - "Responsible AI use principles"
+    data_access_policy: "tiered_access"
+
+  trust_model:
+    node_transparency: "public_registry"
+    audit_log_required: true
+    public_disclosure_policy: "tiered"
+    minimum_retention_days: 365
+
+  audit:
+    audit_log_id_prefix: "audit-sfn-ncn-0001"
+    records_decision_trace: true
+    records_ai_assistance: true
+    records_human_review: true
+
+  safety_boundary:
+    no_command_authority: true
+    no_target_selection: true
+    no_automatic_retaliation: true
+    no_weapon_use_recommendation: true
+    no_final_hostile_attribution_by_ai: true
