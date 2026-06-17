@@ -1,5 +1,16 @@
 ## v0.2 — Neutral Coordination Node
 
+## Civilizational Positioning
+
+SCCP is positioned as a thin coordination OS for preserving outer space as a shared commons.
+
+It is not a military command structure.  
+It is a coordination, verification, traceability, and de-escalation layer for peaceful AI-assisted space safety.
+
+See:
+
+- `docs/civilizational-positioning.md`
+
 v0.2 adds the Neutral Coordination Node model.
 
 A Neutral Coordination Node is a non-command coordination structure for:
